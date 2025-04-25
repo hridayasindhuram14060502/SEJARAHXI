@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="asset/tokoh/Agus Alim.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Ahmad Soebardjo.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Amir Sjarifuddin.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Chaerul Saleh.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Fatmawati.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Jenderal Sudirman.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Kartini.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Ki Hajar Dewantara.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Laksmana Malahayati.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Laksmana Tadashi Maeda.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Mohammad Hatta.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Mohammad Yamin.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Rajiman Wediodiningrat.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Rasuna Said.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Sayuti Melik.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Soekarno.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Soepomo.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Sukarni.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Sutan Syahrir.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Tan Malaka.png" as="image" type="image/png" />
+    <link rel="preload" href="asset/tokoh/Wikana.png" as="image" type="image/png" />
+
+<link rel="stylesheet" href="hero.css">
+<link rel="icon" type="image/x-icon" href="asset/komponen/to do list.webp">
+<script defer src="hero.js"></script>
+    <title>Let's Learn History!</title>
+</head>
+<body>
+    <div id="preloader">
+        <video id="preloader-video" autoplay muted>
+            <source src="asset/komponen/0316.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="buttonschat">
+        <div class="buttonschatb">
+            <a class="buttonschatbot" href="index.html" data-tooltip="Home" @click="toggleChatbot">
+                <img src="asset/komponen/home.webp" alt="Home">
+            </a>
+        </div>
+    </div>
+    <div class="gallery">
+        <div id="flip-gallery" class="flip-gallery ">
+            <div class="top unite"></div>
+            <div class="bottom unite"></div>
+            <div class="overlay-top unite"></div>
+            <div class="overlay-bottom unite"></div>
+        </div>
+        <div class="gallery-nav">
+            <button type="button" data-gallery-nav="-1" title="Previous">&#10094;</button>
+            <button type="button" data-gallery-nav="1" title="Next">&#10095;</button>
+        </div>
+    </div>
+</body>
+</html>

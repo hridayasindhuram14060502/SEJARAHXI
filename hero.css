@@ -1,0 +1,188 @@
+/* Copyright (c) 2025 by Chris Bolson (https://codepen.io/cbolson/pen/ByBPjGr) */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Lusitana:wght@400;700&family=Marcellus+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#preloader video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url("asset/komponen/bg.jpg");
+  	background-size: cover;
+  	background-attachment: fixed;
+  	background-position: center;
+	min-height: 100svh;
+	display: grid;
+	place-content: center;
+	/* background: black; */
+	font-family: system-ui;
+	margin: 0;
+}
+.gallery {
+	--gallery-bg-color: rgba(255 255 255 / 0.075);
+	--gallery-border-color: rgb(144, 144, 144);
+	--gallery-padding: 0.5rem;
+	--gallery-width: 200px;
+	--gallery-height: 300px;
+	--gallery-perspective: 800px;
+	--gallery-divider-height: 4px;
+
+	position: relative;
+	background-color: var(--gallery-bg-color);
+	border: 1px solid var(--gallery-border-color);
+	padding: var(--gallery-padding);
+}
+@media (600px < width) {
+	.gallery {
+		--gallery-width: 300px;
+		--gallery-height: 400px;
+	}
+}
+.flip-gallery {
+    position: relative;
+    width: var(--gallery-width);
+    height: var(--gallery-height);
+    text-align: center;
+    perspective: var(--gallery-perspective);
+    margin: 0 auto; /* Pastikan galeri berada di tengah */
+}
+
+/* image title/author with transition */
+.flip-gallery::before {
+    font-family: "Lusitana", serif;
+    content: attr(data-title);
+    color: #000000; /* Warna hitam agar kontras */
+    font-size: 20px; /* Ukuran lebih jelas */
+    font-weight: bold;
+    text-align: center;
+    
+    position: absolute;
+    top: 120%; /* Posisikan lebih ke bawah */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    opacity: var(--title-opacity, 0);
+    transition: opacity 500ms ease-in-out;
+}
+
+
+/* divider line half way down */
+.flip-gallery::after {
+	content: "";
+	position: absolute;
+	/* background-color: black; */
+	width: 100%;
+	height: var(--gallery-divider-height);
+	top: 50%;
+	left: 0;
+	translate: 0 -50%;
+}
+/* image placed in separate elements for flip effect */
+.flip-gallery > * {
+	position: absolute;
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: var(--gallery-width) var(--gallery-height);
+}
+.top,
+.overlay-top {
+	top: 0;
+	transform-origin: bottom;
+	background-position: top;
+}
+.bottom,
+.overlay-bottom {
+	bottom: 0;
+	transform-origin: top;
+	background-position: bottom;
+}
+/* gallery controls */
+.gallery-nav {
+    position: absolute;
+    top: 105%; /* Posisi di bawah gambar */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.gallery-nav > button {
+    background: linear-gradient(to bottom, #5d390078, #3b250074); /* Warna kayu tua */
+    color: #FFD700; /* Warna emas */
+    font-size: 12px;
+    font-weight: bold;
+    border: 2px solid #C9A66B; /* Bingkai emas */
+    padding: 8px 16px;
+    border-radius: 5px; /* Sedikit lengkung agar klasik */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    font-family: 'Old Standard TT', serif;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.gallery-nav > button:hover {
+    background: linear-gradient(to bottom, #3B2500, #5D3A00); /* Efek hover berubah warna */
+    color: white;
+    transform: scale(1.0);
+}
+
+.gallery-nav > button:focus-visible,
+.gallery-nav > button:hover {
+	opacity: 1;
+}
+
+
+.buttonschat {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	z-index: 10;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: flex-start;
+  }
+	
+  .buttonschatb {
+	background-color: #C9A66B;
+	border: 4px solid #5D3A00;
+	border-radius: 50%;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.3s ease-in-out;
+	position: relative;
+	margin-top:10px;
+  } 
+  
+  .buttonschatbot img {
+	border-radius: 50%;
+	transition: all 0.3s ease-in-out;
+	width: 100%;
+	height: 100%;
+  }
+  
+  .buttonschatbot img:hover {
+	transform: scale(1.1);
+  }
